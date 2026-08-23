@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <script src="./index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <div class="max-w-[1200px] w-full m-auto">
+        <div class="flex justify-center items-center h-[100vh]">
+            <form id="multi-step-form"
+                class="flex flex-col items-center justify-center bg-sky-100 py-10 rounded-lg shadow-md gap-4 max-w-[400px] w-full m-auto">
+                <h1 class="text-2xl text-[#333] font-bold">Registration Form</h1>
+                <div class="flex flex-col w-full px-10 gap-4 hidden step">
+                    <h4 class="text-lg text-[#333] font-semibold">Contact Info</h4>
+                    <div class="flex justify-between items-center px-5 py-2 border border-[#ccc] rounded-lg w-full">
+                        <input type="text" placeholder="Enter your number" id="phone"
+                            class="outline-none text-base text-gray-500 w-full">
+                        <i class="fa-solid fa-mobile-screen-button text-lg text-gray-500"></i>
+                    </div>
+                    <div class="flex justify-between items-center px-5 py-2 border border-[#ccc] rounded-lg w-full">
+                        <input type="text" placeholder="Enter your email" id="email"
+                            class="outline-none text-base text-gray-500 w-full">
+                        <i class="fa-regular fa-envelope text-lg text-gray-500"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col w-full px-10 gap-4 hidden step">
+                    <h4 class="text-lg text-[#333] font-semibold">Shipping Address</h4>
+                    <div class="flex justify-between items-center px-5 py-2 border border-[#ccc] rounded-lg w-full">
+                        <input type="text" placeholder="Enter your street address" id="street-address"
+                            class="outline-none text-base text-gray-500 w-full">
+                        <i class="fa-solid fa-location-dot text-lg text-gray-500"></i>
+                    </div>
+                    <div class="flex justify-between items-center px-5 py-2 border border-[#ccc] rounded-lg w-full">
+                        <input type="text" placeholder="Enter your city" id="city"
+                            class="outline-none text-base text-gray-500 w-full">
+                        <i class="fa-solid fa-location-dot text-lg text-gray-500"></i>
+                    </div>
+                    <div class="flex justify-between items-center px-5 py-2 border border-[#ccc] rounded-lg w-full">
+                        <input type="text" placeholder="Enter your state" id="state"
+                            class="outline-none text-base text-gray-500 w-full">
+                        <i class="fa-solid fa-location-dot text-lg text-gray-500"></i>
+                    </div>
+
+                    <div class="flex justify-between items-center px-5 py-2 border border-[#ccc] rounded-lg w-full">
+                        <input type="text" placeholder="Enter your postal code" id="postal-code"
+                            class="outline-none text-base text-gray-500 w-full">
+                        <i class="fa-solid fa-location-dot text-lg text-gray-500"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col w-full px-10 gap-4 hidden step">
+                    <h4 class="text-lg text-[#333] font-semibold">Payment Details</h4>
+                    <div class="flex justify-between items-center px-5 py-2 border border-[#ccc] rounded-lg w-full">
+                        <input type="text" placeholder="Enter your card number" id="card-num"
+                            class="outline-none text-base text-gray-500 w-full">
+                        <i class="fa-regular fa-credit-card text-lg text-gray-500"></i>
+                    </div>
+                    <div class="flex justify-between items-center px-5 py-2 border border-[#ccc] rounded-lg w-full">
+                        <input type="text" placeholder="card expiry date" id="card-expiry"
+                            class="outline-none text-base text-gray-500 w-full">
+                        <i class="fa-regular fa-credit-card text-lg text-gray-500"></i>
+                    </div>
+                    <div class="flex justify-between items-center px-5 py-2 border border-[#ccc] rounded-lg w-full">
+                        <input type="text" id="card-cvc"
+                         placeholder="CVC" class="outline-none text-base text-gray-500 w-full"> 
+                        <i class="fa-solid fa-key text-lg text-gray-500"></i>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <span class="h-4 w-4 bg-[#bbbbbb] rounded-full opacity-25 circle"></span>
+                    <span class="h-4 w-4 bg-[#bbbbbb] rounded-full opacity-25 circle"></span>
+                    <span class="h-4 w-4 bg-[#bbbbbb] rounded-full opacity-25 circle"></span>
+                </div>
+                 <div class="flex justify-end items-center w-full px-5 gap-2">
+                        <button type="button"
+                            class="px-3 py-2 bg-gray-400 text-white rounded-lg font-bold text-sm cursor-pointer previousBtn">Previous</button>
+                        <button type="button"
+                            class="px-3 py-2 bg-sky-500 text-white rounded-lg font-bold text-sm cursor-pointer nextBtn">Next</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
