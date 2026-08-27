@@ -1,0 +1,1 @@
+const selectedDiv = document.getElementById("selectedDiv");

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="./index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Login & Registration Form</title>
+</head>
+
+<body>
+    <div class="container max-w-[400px] w-full bg-[#fff] shadow-md rounded-lg" >
+        <form class="p-7 flex flex-col gap-4" id="login-form">
+            <h2
+                class="relative text-3xl font-bold before:content-[''] before:absolute before:left-0 before:bottom-0 before:h-1 before:w-7 before:bg-[#4070f4]">
+                Login</h2>
+            <div class="flex w-full justify-between items-center px-2 relative border-b-2 border-b-[#ccc]">
+                <input type="email" placeholder="Enter your email" class="h-full w-full py-3 px-5 outline-none text-lg" required>
+                <i class="fa-regular fa-envelope absolute left-0 text-xl"></i>
+            </div>
+            <div class="flex w-full justify-between items-center px-2 relative border-b-2 border-b-[#ccc]">
+                <input type="password" placeholder="Enter your password"
+                    class="password h-full w-full py-3 px-5 outline-none text-lg" required>
+                <i class="fa-solid fa-lock absolute left-0 text-xl"></i>
+                <i class="fa-regular fa-eye-slash absolute right-0 text-xl showHide"></i>
+            </div>
+            <div class="flex justify-between items-center">
+                <div>
+                    <input type="checkbox" id="logCheck" class="text-sm accent-[#4070f4]" required>
+                    <label for="logCheck" class="text-xs text-[#333]">Remember me</label>
+                </div>
+                <a href="" class="text-xs hover:underline text-[#4070f4]">Forgot Password?</a>
+            </div>
+            <button type="submit" class="bg-[#4070f4] text-white text-base py-2 px-3 rounded-lg font-semibold">Login Now</button>
+            <div class="text-xs text-center">
+                <span>Not a member? <a href="" class="text-[#4070f4] hover:underline" id="signup">Signup now</a> </span>
+            </div>
+        </form>
+
+        <!-- Registration form -->
+          <form class="p-7 flex flex-col gap-4 hidden" id="registration-form">
+            <h2
+                class="relative text-3xl font-bold before:content-[''] before:absolute before:left-0 before:bottom-0 before:h-1 before:w-9 before:bg-[#4070f4]">
+                Registration</h2>
+                <div class="flex w-full justify-between items-center px-2 relative border-b-2 border-b-[#ccc]">
+                <input type="text" placeholder="Enter your name" class="h-full w-full py-3 px-5 outline-none text-lg" id="registerName"
+            name="name" required>
+             <small class="error" id="nameError"></small>
+                <i class="fa-regular fa-user absolute left-0 text-xl"></i>
+            </div>
+            <div class="flex w-full justify-between items-center px-2 relative border-b-2 border-b-[#ccc]">
+                <input type="email" placeholder="Enter your email" class="h-full w-full py-3 px-5 outline-none text-lg" id="registerEmail"
+            name="email" required>
+             <small class="error" id="emailError"></small>
+                <i class="fa-regular fa-envelope absolute left-0 text-xl"></i>
+            </div>
+            <div class="flex w-full justify-between items-center px-2 relative border-b-2 border-b-[#ccc]">
+                <input type="password"  placeholder="Enter your password" class="password h-full w-full py-3 px-5 outline-none text-lg" required  id="registerPassword"
+            name="password">
+             <small class="error" id="passwordError"></small>
+                <i class="fa-solid fa-lock absolute left-0 text-xl"></i>
+            </div>
+            <div class="flex w-full justify-between items-center px-2 relative border-b-2 border-b-[#ccc]">
+                <input type="password" placeholder="Enter your password"
+                    class="password h-full w-full py-3 px-5 outline-none text-lg" required id="confirmPassword"
+            name="confirmPassword">
+                    <small class="error" id="confirmPasswordError"></small>
+                <i class="fa-solid fa-lock absolute left-0 text-xl"></i>
+                <i class="fa-regular fa-eye-slash absolute right-0 text-xl showHide"></i>
+            </div>
+            <div class="flex justify-between items-center">
+                <div>
+                    <input type="checkbox" id="logCheckRegister" class="text-sm accent-[#4070f4]">
+                    <label for="logCheck" class="text-xs text-[#333]">Remember me</label>
+                </div>
+                <a href="/" class="text-xs hover:underline text-[#4070f4]">Forgot Password?</a>
+            </div>
+            <button type="submit" class="bg-[#4070f4] text-white text-base py-2 px-3 rounded-lg font-semibold">Login Now</button>
+            <div class="text-xs text-center">
+                <span>Already have an account <a href="" class="text-[#4070f4] hover:underline" id="register">Register now</a> </span>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -23,7 +23,7 @@ let formdata = {
 loadData();
 function showTab(n) {
     const steps = document.querySelectorAll(".step");
-
+    const circleParent = document.querySelector(".circle-parent");
     steps.forEach((step) => {
         step.classList.add("hidden");
         step.classList.remove("block");
@@ -37,11 +37,20 @@ function showTab(n) {
         previousBtn.classList.remove("hidden");
     }
     if (n === steps.length - 1) {
-        nextBtn.textContent = "Submit";
-        nextBtn.type = "submit";
+        nextBtn.classList.add("hidden");
+        previousBtn.classList.add("hidden");
+        circleParent.classList.add("hidden");
     } else {
-        nextBtn.textContent = "Next";
+        nextBtn.classList.remove("hidden");
+        nextBtn.type = "button";
+         circleParent.classList.remove("hidden");
+        if (n === steps.length - 2) {
+            nextBtn.textContent = "Submit";
+        } else {
+            nextBtn.textContent = "Next";
+        }
     }
+
     circles.forEach((circle, index) => {
         if (index === n) {
             circle.classList.replace("opacity-25", "opacity-100");
@@ -52,13 +61,8 @@ function showTab(n) {
 }
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("form submitted");
-    console.log("formdata", formdata);
     localStorage.removeItem("formdata");
     localStorage.removeItem("currentTab");
-
-    form.reset();
-
     formdata = {
         phone: "",
         email: "",
@@ -117,7 +121,8 @@ nextBtn.addEventListener("click", () => {
         isValid = validateCard() && ValidateExpCard() && validateCVV();
     }
     if (isValid) {
-        if (currentTab < document.querySelectorAll(".step").length - 1) {
+        const steps = document.querySelectorAll(".step");
+        if (currentTab < steps.length - 1) {
             currentTab++;
             saveData();
             showTab(currentTab);
@@ -277,3 +282,22 @@ function validateCVV() {
     }
     return true
 }
+const doneBtn = document.querySelector(".doneBtn");
+
+doneBtn.addEventListener("click", () => {
+    form.reset()
+      localStorage.removeItem("formdata");
+    localStorage.removeItem("currentTab");
+
+    formdata = {
+        phone: "",
+        email: "",
+        street: "",
+        city: "",
+        state: "",
+        postal: "",
+    };
+
+    currentTab = 0;
+    showTab(currentTab);
+})
