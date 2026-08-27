@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library-Catalog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="./index.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="flex flex-col gap-5 items-center justify-center py-20 px-6 w-full">
+            <form class="flex flex-col items-center justify-center gap-6 w-full shadow-md py-8 px-6 rounded-lg"
+                id="bookForm">
+                <h1 class="text-5xl font-semibold mb-8">Library Catalog</h1>
+                <div class="flex items-start justify-center gap-8 w-full px-4">
+                    <div class="flex flex-col gap-2 items-start justify-center w-full">
+                        <label for="title" class="text-xl font-awesome">Title<span class="text-red-700">*</span></label>
+                        <input type="text" id="title" placeholder="Enter book's title"
+                            class="w-full border border-gray-200 py-2 px-3 rounded-md focus:outline-none focus:border-sky-500">
+                        <small id="titleError" class="text-red-700"></small>
+                    </div>
+                    <div class="flex flex-col gap-2 items-start justify-center w-full">
+                        <label for="author" class="text-xl font-awesome">Author<span
+                                class="text-red-700">*</span></label>
+                        <input type="text" id="author" placeholder="Enter author's name"
+                            class="w-full border border-gray-200 py-2 px-3 rounded-md focus:outline-none focus:border-sky-500">
+                        <small id="authorError" class="text-red-700"></small>
+                    </div>
+                </div>
+                <div class="flex items-start justify-center gap-8 w-full px-4">
+                    <div class="flex flex-col gap-2 items-start justify-center w-full">
+                        <label for="page" class="text-xl font-awesome">Pages</label>
+                        <input type="number" id="page" placeholder="Enter page number"
+                            class="w-full border border-gray-200 py-2 px-3 rounded-md focus:outline-none focus:border-sky-500">
+                        <small id="pageError" class="text-red-700"></small>
+                    </div>
+                    <div class="flex flex-col gap-2 items-start justify-center w-full">
+                        <label for="bookImage" class="text-xl font-awesome">Upload image<span
+                                class="text-red-700">*</span></label>
+                        <input type="file" id="bookImage" accept="image/*"
+                            class="w-full border border-gray-200 py-2 px-3 rounded-md focus:outline-none focus:border-sky-500">
+                        <small id="imageError" class="text-red-700"></small>
+                    </div>
+                </div>
+
+                <button
+                    class="bg-[#18181B] text-[#fff] py-2 px-6 rounded-full text-lg font-semibold transition-all duration-300 ease-in-out hover:bg-[#27272A] hover:text-[#fff] hover:-translate-y-1">Add
+                    the Book</button>
+            </form>
+            <div class="flex items-center w-full gap-10">
+                <div class="relative">
+                    <select id="booksDropdown"
+                        class="appearance-none rounded-xl border border-[#D8CEE2] bg-white px-6 py-3 pr-10 text-sm font-medium text-[#30203D] shadow-sm outline-none transition-all duration-200 hover:border-[#A991B8] cursor-pointer">
+                        <option value="all">All Books</option>
+                        <option value="read">Read</option>
+                        <option value="unread">Unread</option>
+                    </select>
+                    <div class="absolute inset-y-0 right-3 flex items-center text-[#6B5B73]">
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </div>
+                </div>
+                <div class="flex items-center gap-5 border border-gray-200 shadow-md rounded-md py-2 px-3">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search for a book...." class="outline-none" id="search">
+                </div>
+                <div class="flex items-center gap-5">
+                    <span id="totalBooks"></span>
+                    <span id="readBooks"></span>
+                    <span id="unreadBooks"></span>
+                </div>
+            </div>
+            <div id="noData" class="hidden"></div>
+            <div id="bookList" class="grid grid-cols-3 gap-10 items-stretch w-full h-auto"></div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
